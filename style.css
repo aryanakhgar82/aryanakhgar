@@ -1,0 +1,71 @@
+/* style.css - Glassmorphism + neon + modern UI */
+:root{
+  --bg:#0f0f10;
+  --glass-1: rgba(255,255,255,0.06);
+  --glass-2: rgba(255,255,255,0.03);
+  --accent: #00ff7a;
+  --accent-dim: rgba(0,255,122,0.12);
+}
+*{box-sizing:border-box;font-family:'Vazirmatn',system-ui,-apple-system;}
+html,body{height:100%;margin:0;background:linear-gradient(180deg,#ffffff 0%, #e6e6e6 30%, #111 100%);color:#eaeaea}
+.bg-layers{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:28px;}
+.appliance-overlay{position:fixed;inset:0;z-index:0;pointer-events:none;mix-blend-mode:normal;opacity:0.12;}
+.appliance-overlay .appl{position:absolute;width:360px;height:auto;filter:grayscale(30%) blur(0.6px);object-fit:cover;opacity:0.9}
+.appliance-overlay .a1{left:6%;top:12%}
+.appliance-overlay .a2{right:6%;bottom:18%}
+.appliance-overlay .a3{left:30%;bottom:6%}
+
+/* Header */
+.top{width:100%;max-width:1100px;display:flex;justify-content:space-between;align-items:center;gap:12px;z-index:5;margin-bottom:18px}
+.top h1{font-size:20px;color:#111;font-weight:700;background:linear-gradient(90deg,#000 0%, #222 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 6px 18px rgba(0,0,0,0.6));}
+.neon-off,.neon-on{padding:12px 18px;border-radius:10px;border:none;font-weight:700;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,0.45);transition:all .25s ease}
+.neon-off{background:linear-gradient(180deg,#0d0d0d,#1b1b1b);color:#8af5c8;border:1px solid rgba(138,245,200,0.08)}
+.neon-on{background:linear-gradient(180deg,#002b12,#003a19);color:var(--accent);box-shadow:0 0 18px 4px var(--accent-dim),0 10px 30px rgba(0,0,0,0.6);text-shadow:0 0 8px rgba(0,255,122,0.8)}
+
+/* Card */
+.card{width:100%;max-width:1100px;padding:22px;border-radius:18px;backdrop-filter:blur(8px) saturate(120%);position:relative;z-index:4}
+.glass{background:linear-gradient(180deg,var(--glass-1),var(--glass-2));border:1px solid rgba(255,255,255,0.06);box-shadow:0 6px 30px rgba(0,0,0,0.35);}
+
+/* Intro */
+.center{text-align:center}
+.lead{color:#ddd;margin-bottom:14px}
+
+/* Quiz area */
+.hidden{display:none}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-weight:600;color:#cfcfcf}
+.questionCard{display:flex;gap:18px;align-items:center}
+#timerWrap{width:110px;height:110px;flex:0 0 110px;display:flex;align-items:center;justify-content:center}
+#timerSvg{width:100%;height:100%}
+.timer-bg{fill:none;stroke:#222;stroke-width:8}
+.timer-fg{fill:none;stroke:var(--accent);stroke-width:8;stroke-linecap:round;transform-origin:50% 50%;transition:stroke-dashoffset 0.3s linear}
+#timerText{font-size:16px;fill:#fff;font-weight:700}
+
+/* Question and answers */
+.qtext{flex:1;font-size:18px;color:#fff;margin-bottom:8px}
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.answerBtn{padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:rgba(0,0,0,0.25);cursor:pointer;transition:all .18s;box-shadow:0 6px 18px rgba(0,0,0,0.35)}
+.answerBtn:hover{transform:translateY(-4px)}
+.answerBtn.correct{background:linear-gradient(90deg,rgba(0,255,122,0.12),rgba(0,255,122,0.06));box-shadow:0 6px 24px rgba(0,255,122,0.06);border:1px solid rgba(0,255,122,0.18)}
+.answerBtn.wrong{opacity:0.6;filter:grayscale(50%)}
+
+/* Buttons */
+.primary{padding:12px 18px;border-radius:12px;border:none;background:linear-gradient(90deg,#0b7a3b,#00ff7a);color:#041006;font-weight:700;cursor:pointer;box-shadow:0 8px 24px rgba(0,255,122,0.08)}
+.secondary{padding:10px 14px;border-radius:10px;border:none;background:linear-gradient(90deg,#222,#333);color:#ddd;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,0.45)}
+.disabled{opacity:0.5;pointer-events:none;transform:none}
+
+/* Glossy buttons with halo & subtle shake */
+.primary, .secondary, .neon-on, .neon-off {transition:transform .12s ease, box-shadow .12s}
+.primary:active, .secondary:active{transform:translateY(2px)}
+.shake {animation:shake .9s infinite ease-in-out}
+@keyframes shake{0%{transform:translateX(0)}25%{transform:translateX(-1px)}50%{transform:translateX(1px)}75%{transform:translateX(-1px)}100%{transform:translateX(0)}}
+
+/* Final modal */
+.center h2{font-size:22px;color:var(--accent);text-shadow:0 0 10px rgba(0,255,122,0.3)}
+.foot{margin-top:22px;color:#bfbfbf;opacity:0.9}
+
+/* responsive */
+@media (max-width:720px){
+  .answers{grid-template-columns:1fr}
+  #timerWrap{width:90px;height:90px}
+  .appliance-overlay .appl{display:none}
+}
