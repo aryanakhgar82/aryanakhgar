@@ -1,0 +1,1 @@
+const questions = { science: [], history: [], cinema: [], tv: [], football: [], food: [] };

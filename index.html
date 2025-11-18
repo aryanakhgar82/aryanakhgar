@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>آرین بلک‌کور — جمعه سیاه پر تخفیف</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="brand"><img src="assets/logo_neon.svg" alt="logo" class="logo"><div class="titles"><div class="promo">جمعه سیاه پر تخفیف</div><div class="name">آرین بلک‌کور</div></div></div>
+  <button id="startBtn" class="btn">بزن بریم</button>
+</header>
+
+<section class="hero">
+  <div class="hero-left">
+    <h1>جواب بده — جایزه بگیر</h1>
+    <p class="lead">هر ۵ سوال علمی که پاسخ می‌دهید اگر همه صحیح باشند، جشن گلریزان نئون و فاکتور می‌گیرید.</p>
+    <div id="categories" class="categories"></div>
+  </div>
+  <div class="hero-right">
+    <div class="appliance-preview">
+      <img src="assets/fridge.svg" alt="یخچال" class="appl">
+      <img src="assets/washer.svg" alt="لباسشویی" class="appl">
+      <img src="assets/dish.svg" alt="ظرفشویی" class="appl">
+    </div>
+  </div>
+</section>
+
+<main class="container">
+  <section id="quizSection" class="quiz" hidden>
+    <div class="q-head"><div id="catLabel">علمی</div><div class="progress"><span id="progressBar" style="width:0%"></span></div><div id="qIndex">سوال 1</div></div>
+    <div id="questionText" class="question-text">...</div>
+    <div id="answers" class="answers"></div>
+  </section>
+
+  <aside class="sidebar">
+    <div class="card"><div>امتیاز: <strong id="score">0</strong></div><div>سوالات علمی: <strong id="sciCount">0</strong></div></div>
+    <div class="card invoices"><h4>فاکتورها</h4><div id="invoicesList"></div></div>
+  </aside>
+</main>
+
+<canvas id="confetti" class="confetti-canvas" aria-hidden="true"></canvas>
+
+<div id="invoiceModal" class="modal" aria-hidden="true"><div class="modal-inner"><h3>تبریک!</h3><div id="invoiceCode" class="invoice-code">000000</div><button id="closeModal" class="btn">باشه</button></div></div>
+
+<script src="questions.js"></script>
+<script src="app.js" defer></script>
+</body>
+</html>
