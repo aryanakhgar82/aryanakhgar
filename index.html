@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مسابقه لوازم خانگی</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<section id="loginSection" class="glass login-box">
+  <h2>ورود / ثبت‌نام</h2>
+  <p>شماره موبایل خود را وارد کنید:</p>
+  <input type="text" id="phoneInput" placeholder="09121234567">
+  <button id="loginBtn" class="btn">ورود</button>
+  <p id="loginMsg" class="login-msg"></p>
+</section>
+
+<section id="heroSection" class="hero hidden">
+  <h1 class="neon-title">جمعه سیاه | جمعه‌ای پر از تخفیف</h1>
+  <button id="startBtn" class="start-btn">بزن بریم</button>
+</section>
+
+<section id="game" class="hidden glass game-box">
+  <h2 id="q-title"></h2>
+  <ul id="answers"></ul>
+  <div id="timer" class="timer">زمان: ۱۵</div>
+</section>
+
+<section id="result" class="hidden glass result-box">
+  <h2 id="resultTitle"></h2>
+  <p id="factorCode"></p>
+  <button id="restartBtn" class="btn">بازگشت</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
