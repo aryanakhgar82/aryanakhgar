@@ -1,1 +1,0 @@
-Arian BlackCore — Professional ready package for GitHub Pages\n\nUpload all files in this zip to the root of your repository and enable GitHub Pages (Branch: main, Folder: /).\nAfter upload, tell me 'uploaded' and I'll verify.
