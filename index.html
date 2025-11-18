@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<title>آرین بلک‌کور | جواب بده، جایزه ببر!</title>
+<link rel="stylesheet" href="style.css" />
+<script defer src="app.js"></script>
+<script defer src="questions.js"></script>
+</head>
+<body>
+<header class="hero">
+  <h1>آرین بلک‌کور</h1>
+  <h2>بلک‌فرایدی همیشه روشن!</h2>
+  <button class="start-btn" onclick="startGame()">بزن بریم 🎉</button>
+</header>
+
+<section id="categories" class="hidden">
+  <h2>انتخاب دسته سوال</h2>
+  <div class="cats">
+    <button onclick="startQuiz('science')">علمی</button>
+    <button onclick="startQuiz('history')">تاریخی</button>
+    <button onclick="startQuiz('cinema')">سینما</button>
+    <button onclick="startQuiz('tv')">تلویزیون</button>
+    <button onclick="startQuiz('football')">فوتبال</button>
+    <button onclick="startQuiz('food')">غذا و دسر</button>
+  </div>
+</section>
+
+<section id="quiz" class="hidden">
+  <h2 id="q-title"></h2>
+  <div id="q-opts"></div>
+  <div id="progress"></div>
+</section>
+
+<div id="factor-modal" class="modal hidden">
+  <div class="modal-box">
+    <h2>تبریک! 🎁</h2>
+    <p>فاکتور شما:</p>
+    <h1 id="factor-code"></h1>
+    <button onclick="closeFactor()">باشه</button>
+  </div>
+</div>
+
+</body>
+</html>
