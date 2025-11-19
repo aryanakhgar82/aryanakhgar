@@ -1,56 +1,0 @@
-<!doctype html>
-<html lang="fa">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Quiz of King — نسخه نهایی</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="container">
-    <header>
-      <h1>Quiz of King — نسخهٔ نهایی (تک‌نفره)</h1>
-      <p class="subtitle">قانون برد: <strong id="winTarget">5</strong> پاسخ صحیح پشت‌سرهم — تایمر هر سوال: <strong id="timerTarget">15</strong> ثانیه</p>
-    </header>
-
-    <main id="quiz" aria-live="polite">
-      <div id="status">
-        <div>سابقهٔ درست پشت‌سرهم: <strong id="streak">0</strong></div>
-        <div id="qInfo">سوال <span id="qIndex">0</span> / <span id="qTotal">0</span></div>
-      </div>
-
-      <div class="card">
-        <div id="timerBarWrap">
-          <div id="timerBar"></div>
-          <div id="timerText">15</div>
-        </div>
-
-        <div id="question" class="question">در حال بارگذاری سوال...</div>
-        <div id="choices" class="choices" role="list"></div>
-      </div>
-
-      <div class="controls">
-        <button id="nextBtn" class="btn" disabled>سوال بعدی</button>
-        <button id="restartBtn" class="btn secondary">شروع مجدد</button>
-      </div>
-
-      <div id="help" class="muted">برای پاسخ دادن یک گزینه را انتخاب کنید — اگر زمان تمام شود، سوال به‌عنوان اشتباه محسوب می‌شود و ریست شدن رشتهٔ درست رخ می‌دهد.</div>
-    </main>
-
-    <footer>
-      <small>نسخه کامل — قابل آپلود در GitHub Pages</small>
-    </footer>
-  </div>
-
-  <!-- Win modal -->
-  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="winTitle">
-    <div class="modal-content">
-      <h2 id="winTitle">تبریک 🎉</h2>
-      <p>شما <span id="winStreak">5</span> پاسخ صحیح پشت‌هم دادید و برنده شدید! 👑</p>
-      <button id="playAgain" class="btn">دوباره بازی کن</button>
-    </div>
-  </div>
-
-  <script src="app.js"></script>
-</body>
-</html>
